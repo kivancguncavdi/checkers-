@@ -1,7 +1,7 @@
 #ifndef TILE_HPP_
 #define TILE_HPP_
 
-#include "color.hpp"
+#include "common.hpp"
 #include "SDL.h"
 
 class Tile : public SDL_Rect

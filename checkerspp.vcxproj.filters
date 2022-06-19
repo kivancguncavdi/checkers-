@@ -29,10 +29,10 @@
     <ClInclude Include="include\board.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\color.hpp">
+    <ClInclude Include="include\tile.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\tile.hpp">
+    <ClInclude Include="include\common.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

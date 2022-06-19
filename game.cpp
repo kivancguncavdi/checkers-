@@ -18,7 +18,6 @@ void drawBackground();
 void drawTiles();
 unsigned int score = 0;
 
-
 //please don't put all your code in main like I did.
 int main() {
 
@@ -31,7 +30,7 @@ int main() {
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
 		std::cout << "Subsystems Initialized!\n";
 
-		window = SDL_CreateWindow("Test Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 500, 500, flags);
+		window = SDL_CreateWindow("Checkers++", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, flags);
 		if (window) {
 			std::cout << "Window Created!\n";
 			SDL_SetWindowMinimumSize(window, 100, 100);
@@ -103,10 +102,10 @@ void update() {
 void drawBackground() {
 	SDL_Rect background;
 
-	background.x = 48;
-	background.y = 48;
-	background.h = 404;
-	background.w = 404;
+	background.x = (WINDOW_WIDTH / 10) - 2;
+	background.y = (WINDOW_HEIGHT / 10) - 2;
+	background.h = ((WINDOW_WIDTH / 10) * 8) + 4;
+	background.w = ((WINDOW_HEIGHT / 10) * 8) + 4;
 
 	SDL_RenderDrawRect(renderer, &background);
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);

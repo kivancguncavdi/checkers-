@@ -2,7 +2,7 @@
 #define BOARD_HPP_
 
 #include "SDL.h"
-#include "color.hpp"
+#include "common.hpp"
 #include "tile.hpp"
 
 class Board
