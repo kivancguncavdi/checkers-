@@ -10,7 +10,8 @@ public:
 	SDL_Window* getWindow() const { return m_window; };
 private:
 	SDL_Window* m_window;
-	bool m_fullscreen;
+	bool m_fullscreen = false;
+	int m_flags = SDL_WINDOW_RESIZABLE;
 };
 
 

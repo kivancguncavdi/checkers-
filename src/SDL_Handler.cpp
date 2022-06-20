@@ -6,19 +6,21 @@ using namespace std;
 
 Window::Window()
 {
-	m_fullscreen = false;
-	int flags = 0;
-	flags = SDL_WINDOW_RESIZABLE;
 	if (m_fullscreen) {
-		flags = flags | SDL_WINDOW_FULLSCREEN;
+		m_flags = m_flags | SDL_WINDOW_FULLSCREEN;
 	}
-	if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
+	if (SDL_Init(SDL_INIT_EVERYTHING) != R_OK)
+	{
+		cout << "SDL initialization failed: " << SDL_GetError() << endl;
+	}
+	else
+	{
 		std::cout << "Subsystems Initialized!\n";
 
-		m_window = SDL_CreateWindow("Checkers++", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, flags);
+		m_window = SDL_CreateWindow("Checkers++", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, m_flags);
 		if (m_window) {
 			std::cout << "Window Created!\n";
-			SDL_SetWindowMinimumSize(m_window, 100, 100);
+			SDL_SetWindowMinimumSize(m_window, MINIMUM_WINDOW_WIDTH, MINIMUM_HEIGHT_WIDTH);
 		}
 	}
 }
