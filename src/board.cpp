@@ -17,12 +17,24 @@ Board::Board()
 		}
 }
 
-void Board::getTileStatus(SDL_Event event)
+void Board::getTileStatus(SDL_Event event, Renderer renderer)
 {
 	int x, y;
 	x = (event.button.x - (WINDOW_HEIGHT / 10)) / (WINDOW_HEIGHT / 10);
 	y = (event.button.y - (WINDOW_HEIGHT / 10)) / (WINDOW_HEIGHT / 10);
 	
-	m_tiles[x][y].Clicked(event);
-	cout << "Clicked tile's coordinate is: " << x << ", " << y << endl;
+	if (x < 0 || y < 0 || x > 7 || y > 7)
+	{
+		cout << "Clicked outside the board!" << endl;
+		cout << "Coordinate is: " << event.button.x << ", " << event.button.y << endl;
+	}
+	else
+	{
+		m_tiles[x][y].Clicked(x, y, renderer);
+
+		if (m_tiles[x][y].isClicked())
+			cout << "Selected tile's coordinate is: " << event.button.x << ", " << event.button.y << endl;
+		else
+			cout << "De-selected tile's coordinate is: " << event.button.x << ", " << event.button.y << endl;
+	}
 }

@@ -3,6 +3,7 @@
 
 #include "common.hpp"
 #include "SDL.h"
+#include "SDL_Handler.hpp"
 
 class Tile : public SDL_Rect
 {
@@ -10,7 +11,7 @@ public:
 	Color getColor() const { return m_tileColor; }
 	void setColor(Color tileColor) { m_tileColor = tileColor; }
 	bool isClicked() const { return m_status; }
-	void Clicked(SDL_Event event);
+	void Clicked(int x, int y, Renderer renderer);
 private:
 	Color m_tileColor;
 	bool m_status;

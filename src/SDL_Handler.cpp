@@ -35,6 +35,13 @@ Renderer::Renderer(SDL_Window* window)
 	}
 }
 
+void Renderer::renderLine(SDL_Point* points, int pNum, int r, int g, int b, int alpha)
+{
+	SDL_SetRenderDrawColor(m_renderer, r, g, b, alpha);
+	SDL_RenderDrawLines(m_renderer, points, pNum);
+	SDL_RenderPresent(m_renderer);
+}
+
 Window::~Window()
 {
 	SDL_DestroyWindow(m_window);	//error here

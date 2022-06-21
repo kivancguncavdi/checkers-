@@ -8,7 +8,7 @@ using namespace std;
 Board checkersBoard;
 
 bool isRunning;
-void handleEvents();
+void handleEvents(Renderer& renderer);
 void update();
 void render(Renderer& renderer);
 void drawBackground(Renderer& renderer);
@@ -24,7 +24,7 @@ int main() {
 	isRunning = true;
 
 	while (isRunning) {
-		handleEvents();
+		handleEvents(renderer);
 		update();
 	}
 
@@ -32,7 +32,7 @@ int main() {
 }
 
 //handles any events that SDL noticed.
-void handleEvents() {
+void handleEvents(Renderer& renderer) {
 	//the only event we'll check is the  SDL_QUIT event.
 	SDL_Event event;
 	SDL_WaitEvent(&event);
@@ -42,7 +42,7 @@ void handleEvents() {
 		isRunning = false;
 		break;
 	case SDL_MOUSEBUTTONDOWN:
-		checkersBoard.getTileStatus(event);
+		checkersBoard.getTileStatus(event, renderer);
 	default:
 		break;
 	}
