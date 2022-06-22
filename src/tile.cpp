@@ -3,9 +3,6 @@
 
 using namespace std;
 
-#define TILE_WIDTH (WINDOW_WIDTH / 10)
-#define TILE_HEIGHT (WINDOW_HEIGHT / 10)
-
 int Tile::prevX = 0;
 int Tile::prevY = 0;
 Color Tile::prevTileColor = Black;
