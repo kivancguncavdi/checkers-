@@ -11,7 +11,10 @@ public:
 	Color getColor() const { return m_tileColor; }
 	void setColor(Color tileColor) { m_tileColor = tileColor; }
 	bool isClicked() const { return m_status; }
-	void Clicked(int x, int y, Renderer renderer);
+	void Clicked(int x, int y, Renderer& renderer);
+	static int prevX;
+	static int prevY;
+	static Color prevTileColor;
 private:
 	Color m_tileColor;
 	bool m_status;

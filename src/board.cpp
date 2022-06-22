@@ -17,7 +17,7 @@ Board::Board()
 		}
 }
 
-void Board::getTileStatus(SDL_Event event, Renderer renderer)
+void Board::getTileStatus(SDL_Event event, Renderer& renderer)
 {
 	int x, y;
 	x = (event.button.x - (WINDOW_HEIGHT / 10)) / (WINDOW_HEIGHT / 10);

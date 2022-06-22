@@ -20,7 +20,7 @@ public:
 	Renderer(SDL_Window* window);
 	~Renderer();
 	SDL_Renderer* getRenderer() const { return m_renderer; };
-	void renderLine(SDL_Point* points, int pNum, int r, int g, int b, int alpha);
+	void renderRect(SDL_Rect* rect, int r, int g, int b, int alpha);
 private:
 	SDL_Renderer* m_renderer;
 };

@@ -71,8 +71,8 @@ void drawBackground(Renderer& renderer) {
 
 	background.x = (WINDOW_WIDTH / 10) - 2;
 	background.y = (WINDOW_HEIGHT / 10) - 2;
-	background.h = ((WINDOW_WIDTH / 10) * 8) + 4;
-	background.w = ((WINDOW_HEIGHT / 10) * 8) + 4;
+	background.w = ((WINDOW_WIDTH / 10) * 8) + 4;
+	background.h = ((WINDOW_HEIGHT / 10) * 8) + 4;
 
 	SDL_RenderDrawRect(renderer.getRenderer(), &background);
 	SDL_SetRenderDrawColor(renderer.getRenderer(), 0, 0, 0, 255);

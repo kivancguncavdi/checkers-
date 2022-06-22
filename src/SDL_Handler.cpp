@@ -35,10 +35,11 @@ Renderer::Renderer(SDL_Window* window)
 	}
 }
 
-void Renderer::renderLine(SDL_Point* points, int pNum, int r, int g, int b, int alpha)
+void Renderer::renderRect(SDL_Rect* rect, int r, int g, int b, int alpha)
 {
+	SDL_RenderDrawRect(m_renderer, rect);
 	SDL_SetRenderDrawColor(m_renderer, r, g, b, alpha);
-	SDL_RenderDrawLines(m_renderer, points, pNum);
+	SDL_RenderFillRect(m_renderer, rect);
 	SDL_RenderPresent(m_renderer);
 }
 
